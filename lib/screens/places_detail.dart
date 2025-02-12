@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import '../models/place.dart';
 
-class PlaceInfoScreen extends StatelessWidget {
-  const PlaceInfoScreen({
+class PlacesDetailScreen extends StatelessWidget {
+  const PlacesDetailScreen({
     super.key,
     required this.place,
   });
@@ -13,15 +13,15 @@ class PlaceInfoScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(place.name),
+        title: Text(place.title),
         backgroundColor: Theme.of(context).colorScheme.surfaceContainer,
       ),
       body: Center(
         child: Text(
-          place.name,
-          style: TextStyle(
-            color: Theme.of(context).colorScheme.onPrimaryContainer,
-          ),
+          place.title,
+          style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                color: Theme.of(context).colorScheme.onSurface,
+              ),
         ),
       ),
     );
